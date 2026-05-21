@@ -1,0 +1,23 @@
+# .github/dependabot.yml
+# Configura o Dependabot para verificar vulnerabilidades
+# nas dependências Maven e nas GitHub Actions
+
+version: 2
+updates:
+
+  # Monitora dependências Maven (pom.xml)
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    open-pull-requests-limit: 10
+    labels:
+      - "security"
+      - "dependencies"
+
+  # Monitora as GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
